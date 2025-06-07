@@ -1,0 +1,355 @@
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #0D0D0D;
+    color: #F5F5F5;
+    overflow-x: hidden;
+}
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2E2E2E;
+}
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #B76E79;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+nav a {
+    color: #F5F5F5;
+    text-decoration: none;
+}
+.hero {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.hero h2 {
+    font-size: 2.5rem;
+    color: #F5F5F5;
+}
+.hero button {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color: #B76E79;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.hero button:hover {
+    background-color: #a55a66;
+}
+#productCanvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.produit-section {
+    padding: 4rem 2rem;
+    background-color: #1A1A1A;
+}
+.produit-section h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #B76E79;
+}
+.produit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.produit-container img {
+    max-width: 300px;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(183, 110, 121, 0.6);
+}
+.description {
+    max-width: 400px;
+    color: #F5F5F5;
+}
+.description h4 {
+    font-size: 1.5rem;
+    color: #F5F5F5;
+}
+.description button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #B76E79;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.description button:hover {
+    background-color: #a55a66;
+}
+
+/* Apparition douce pour les sections */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+section.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation sur les boutons */
+button {
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Parallax background on hero */
+.hero {
+    background: linear-gradient(to bottom right, #0D0D0D, #1A1A1A);
+    background-attachment: fixed;
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 140%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(183, 110, 121, 0.15) 0%, transparent 70%);
+    animation: floatGlow 10s infinite ease-in-out;
+    z-index: 0;
+}
+.hero * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes floatGlow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Micro-interactions sur images produit */
+.produit-container img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.produit-container img:hover {
+    transform: scale(1.03) rotateZ(-1deg);
+    box-shadow: 0 0 40px rgba(183, 110, 121, 0.8);
+}
+
+/* Animation de fondu et translation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero, .produit-section {
+  animation: fadeInUp 1s ease-in-out both;
+}
+
+/* Background animé (subtil) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #1a1a1a 0%, #0d0d0d 100%);
+  z-index: -1;
+  animation: bgPulse 10s ease-in-out infinite;
+}
+@keyframes bgPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Apparition progressive des éléments */
+.produit-container img, .description {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+.produit-container img {
+  animation-delay: 0.2s;
+}
+.description {
+  animation-delay: 0.4s;
+}
+
+/* Hover effets */
+.hero button:hover,
+.description button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #b76e79;
+}
+
+/* Lien actif */
+nav a:hover {
+  border-bottom: 2px solid #b76e79;
+}
+
+/* Footer animation */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #1a1a1a;
+  color: #888;
+  font-size: 0.9rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.temoignages-section, .blog-section {
+  padding: 4rem 2rem;
+  background-color: #141414;
+  color: white;
+}
+.temoignages-container, .blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.temoignage, .article {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 300px;
+  text-align: center;
+}
+.temoignage img, .article img {
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+.article a {
+  color: #b76e79;
+  text-decoration: none;
+}
+.article a:hover {
+  text-decoration: underline;
+}
+
+.panier-section {
+  padding: 4rem 2rem;
+  background-color: #0D0D0D;
+  color: white;
+}
+.panier-container {
+  max-width: 800px;
+  margin: auto;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.produit-panier {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.produit-panier img {
+  width: 150px;
+  border-radius: 1rem;
+}
+.checkout {
+  text-align: right;
+}
+.checkout .payer {
+  padding: 0.7rem 1.5rem;
+  background-color: #B76E79;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.checkout .payer:hover {
+  background-color: #a55a66;
+}
+
+.form-paiement {
+  margin-top: 2rem;
+  background-color: #222;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.form-paiement h4 {
+  color: #b76e79;
+  margin-bottom: 1rem;
+}
+.form-paiement label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+}
+.form-paiement input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.valider {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #B76E79;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.valider:hover {
+  background-color: #a55a66;
+}
+
+.confirmation {
+  text-align: center;
+  background-color: #1e1e1e;
+  padding: 3rem;
+  border-radius: 1rem;
+  animation: fadeInUp 1s ease-in-out both;
+}
+.confirmation h3 {
+  color: #B76E79;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  animation-name: drop;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  opacity: 0.8;
+  z-index: 9999;
+}
+
+@keyframes drop {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

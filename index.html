@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUMINAIRE - Beauté et Technologie</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="module" src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>LUMINAIRE</h1>
+    <nav>
+      <ul>
+        <li><a href="#produit">Produit</a></li>
+        <li><a href="#temoignages">Témoignages</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#panier">Panier</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Révélez votre éclat naturel</h2>
+      <p>Le futur du soin de la peau : lumière, luxe, innovation.</p>
+      <button>Acheter maintenant</button>
+    </section>
+
+    <section id="produit" class="produit-section">
+      <h3>Notre Produit</h3>
+      <div class="produit-container">
+        <img src="assets/images/product.jpg" alt="Masque LED LUMINAIRE" />
+        <div class="description">
+          <h4>Masque LUMINAIRE</h4>
+          <p>Technologie LED anti-âge : lumière rouge, bleue et infrarouge pour une peau éclatante.</p>
+          <p><strong>Prix : 349€</strong></p>
+          <button>Acheter</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="temoignages" class="temoignages-section">
+      <h3>Témoignages</h3>
+      <div class="temoignages-container">
+        <div class="temoignage">
+          <img src="assets/images/testimonial1.jpg" alt="Claire D." />
+          <p>"Une révolution. Ma peau est plus douce, plus lisse. Merci LUMINAIRE."</p>
+          <strong>— Claire D.</strong>
+        </div>
+        <div class="temoignage">
+          <img src="assets/images/testimonial2.jpg" alt="Sarah M." />
+          <p>"En deux semaines, j’ai vu mes ridules disparaître. Indispensable."</p>
+          <strong>— Sarah M.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="blog-section">
+      <h3>Le Journal Beauté</h3>
+      <div class="blog-container">
+        <div class="article">
+          <img src="assets/images/blog1.jpg" alt="Blog 1" />
+          <h4>LED : futur du soin anti-âge</h4>
+          <p>La lumière rouge stimule la régénération cellulaire et la production de collagène.</p>
+        </div>
+        <div class="article">
+          <img src="assets/images/blog2.jpg" alt="Blog 2" />
+          <h4>Routine beauté quotidienne</h4>
+          <p>Comment intégrer LUMINAIRE à votre rituel du soir en 5 minutes.</p>
+        </div>
+        <div class="article">
+          <img src="assets/images/blog3.jpg" alt="Blog 3" />
+          <h4>Peau parfaite en 30 jours ?</h4>
+          <p>Nos conseils pour des résultats visibles rapidement grâce à la luminothérapie.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="panier" class="panier-section">
+      <h3>Votre Panier</h3>
+      <div class="panier-container">
+        <div class="produit-panier">
+          <img src="assets/images/product.jpg" alt="Produit dans panier" />
+          <div>
+            <h4>Masque LED LUMINAIRE</h4>
+            <p>Quantité : <input type="number" value="1" min="1" /></p>
+            <p><strong>Prix : 349€</strong></p>
+          </div>
+        </div>
+        <div class="checkout">
+          <p><strong>Total : 349€</strong></p>
+          <button class="payer">Procéder au paiement</button>
+        </div>
+        <form class="form-paiement">
+          <h4>Informations de Paiement</h4>
+          <label>Nom complet</label>
+          <input type="text" placeholder="Jean Dupont" required />
+          <label>Numéro de carte</label>
+          <input type="text" maxlength="16" placeholder="•••• •••• •••• ••••" required />
+          <label>Date d'expiration</label>
+          <input type="text" placeholder="MM/AA" maxlength="5" required />
+          <label>Code de sécurité</label>
+          <input type="text" maxlength="4" placeholder="CVC" required />
+          <label>Adresse</label>
+          <input type="text" placeholder="12 Rue de la Lumière, 75000 Paris" required />
+          <button type="submit" class="valider">Valider le paiement</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="visualisation-3d">
+      <canvas id="productCanvas"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 LUMINAIRE. Design par ChatGPT.</p>
+  </footer>
+</body>
+</html>
